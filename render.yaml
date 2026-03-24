@@ -1,0 +1,17 @@
+# render.yaml  —  Render deployment config for the Flask backend
+# Commit this file to the ROOT of your GitHub repo.
+# On render.com → New → Blueprint → connect repo → done.
+
+services:
+  - type: web
+    name: studyai-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: ALLOWED_ORIGINS
+        value: "https://your-app.vercel.app"   # ← update after Vercel deploy
+    autoDeploy: true

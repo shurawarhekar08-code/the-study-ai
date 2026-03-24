@@ -1,0 +1,13 @@
+# ==============================================================
+#  requirements.txt  —  Python dependencies
+#
+#  Install:  pip install -r requirements.txt
+# ==============================================================
+
+flask==3.0.3
+flask-cors==4.0.1
+gunicorn==22.0.0          # Production WSGI server (required for Render)
+transformers==4.40.2
+torch==2.3.0              # CPU-only; for GPU add +cu118 to the version
+sentencepiece==0.2.0
+accelerate==0.30.1
